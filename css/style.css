@@ -242,29 +242,14 @@
   --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
 
   /* Semantic Color Tokens (Dark Mode) */
-  --color-background: var(--color-charcoal-700);
-  --color-surface: var(--color-charcoal-800);
-  --color-text: var(--color-gray-200);
-  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-  --color-primary: var(--color-teal-300);
-  --color-primary-hover: var(--color-teal-400);
-  --color-primary-active: var(--color-teal-800);
-  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-  --color-error: var(--color-red-400);
-  --color-success: var(--color-teal-300);
-  --color-warning: var(--color-orange-400);
-  --color-info: var(--color-gray-300);
-  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
-  --color-btn-primary-text: var(--color-slate-900);
-  --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
-  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-  --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+  --color-background: #000000;              /* or your dark bg */
+  --color-surface: #111111;
+  --color-text: #ffffff;                    /* main text white */
+  --color-text-secondary: #ffffff;          /* secondary text also white */
+  --color-primary: var(--color-teal-500);   /* your blue */
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-border: rgba(255, 255, 255, 0.08);
 
   /* Common style patterns - updated for dark mode */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
@@ -327,9 +312,13 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+  overflow-x: hidden;
 }
+
 
 *,
 *::before,
@@ -1010,11 +999,12 @@ body {
 }
 
 .what-i-do__item::before {
-    content: '▸';
+    content: '▸'; /* or use '>' if this still breaks */
     color: var(--color-primary);
     font-size: var(--font-size-2xl);
     margin-right: var(--space-10);
 }
+
 
 /* ==================== FEATURED PROJECT ==================== */
 .featured {
@@ -1112,7 +1102,7 @@ body {
 }
 
 .system-thinking__item::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--color-primary);
@@ -1479,4 +1469,281 @@ footer {
   --color-border: rgba(255,255,255,0.08);
   --color-card-border: rgba(255,255,255,0.06);
   --color-card-border-inner: rgba(255,255,255,0.04);
+}
+
+/* ==================== TOP NAV ==================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(11, 15, 20, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 40px;          /* a bit taller */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* everything starts from the left */                 /* space between logo and links */
+}
+
+.nav__logo {
+  font-size: 1.05rem;
+}
+
+/* make links bigger and more spaced */
+.nav__links {
+  display: flex;
+  gap: 40px;                   /* more separation between Home/Projects/About */
+}
+
+.nav__link {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.25s ease;
+}
+
+.nav__link:hover {
+    color: var(--text-primary);
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+/* push hero down so it doesn't hide under fixed nav */
+.hero {
+    padding-top: 120px;
+}
+
+/* Mobile nav spacing */
+@media (max-width: 768px) {
+    .nav__inner {
+        padding: 10px 20px;
+    }
+
+    .nav__links {
+        gap: 18px;
+    }
+
+    .hero {
+        padding-top: 140px;
+    }
+}
+
+/* ==================== PROJECTS PAGE ==================== */
+
+.projects-page {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* main layout */
+.projects {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 32px 80px;
+}
+
+/* keyboard style hint like [p] projects */
+.projects__kbd {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* big heading */
+.projects__title {
+  font-size: clamp(2.8rem, 6vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+}
+
+/* intro */
+.projects__intro {
+  max-width: 720px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* project list spacing */
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* card */
+.project-card {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 10px;
+  padding: 24px 24px 20px;
+  background: radial-gradient(circle at top left,
+              rgba(47, 128, 237, 0.10),
+              rgba(11, 15, 20, 0.92));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+  transition: transform 0.18s ease, border-color 0.18s ease,
+              box-shadow 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85);
+}
+
+/* header row */
+.project-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.project-card__title {
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+.project-card__external {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.project-card__external:hover {
+  border-color: var(--accent);
+  background-color: rgba(47, 128, 237, 0.08);
+}
+
+/* meta line */
+.project-card__meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.project-card__dot {
+  margin: 0 6px;
+}
+
+/* summary */
+.project-card__summary {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* sub-sections */
+.project-card__section {
+  margin-bottom: 14px;
+}
+
+.project-card__label {
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.project-card__list {
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* tags */
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-family: monospace;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* footer on projects page */
+.projects__footer {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 32px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+/* active nav underline on projects page */
+.nav__link--active {
+  color: var(--text-primary);
+}
+
+.nav__link--active::after {
+  width: 100%;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .projects {
+    padding: 110px 20px 60px;
+  }
+
+  .project-card {
+    padding: 20px 18px 18px;
+  }
+}
+
+.hero__description,
+.terminal__line,
+.terminal__output,
+.what-i-do__item,
+.featured__description,
+.about__text {
+  color: #ffffff;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
 }

@@ -4,27 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
   <title>Ragul Kumar A | Python & AI Developer</title>
   <meta name="description" content="Ragul Kumar A is a Python & AI developer building backend systems, AI-powered assistants, and intelligent automation." />
   <link rel="canonical" href="https://aragulkumar.github.io/" />
+
 
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
+
   <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
+
 <body>
 
+  <header class="nav">
+  <div class="nav__inner">
+    <nav class="nav__links">
+      <a href="index.html#home" class="nav__link">Home</a>
+      <a href="projects.html" class="nav__link">Projects</a>
+      <a href="index.html#about" class="nav__link">About</a>
+    </nav>
+  </div>
+</header>
+
+
+
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="home">
     <h1 class="hero__name">Ragul Kumar A</h1>
     <p class="hero__subtitle">Python & AI Developer</p>
     <p class="hero__description">
       I design and build backend systems, AI-powered assistants, and automation tools with a focus on clarity, scalability, and real-world use.
     </p>
+
 
     <div class="terminal">
       <div class="terminal__line"><span class="terminal__prompt">$</span> whoami</div>
@@ -33,8 +50,11 @@
       <div class="terminal__line">Building backend systems & AI automation</div>
     </div>
 
-    <a href="#projects" class="hero__cta">View Projects</a>
+
+    <a href="projects.html" class="hero__cta">View Projects</a>
+
   </section>
+
 
   <!-- WHAT I DO -->
   <section class="section reveal">
@@ -47,26 +67,40 @@
     </ul>
   </section>
 
+
   <!-- FEATURED PROJECT -->
-  <section class="section reveal" id="projects">
-    <h2 class="section__title">Featured Project</h2>
-    <div class="featured">
-      <div class="featured__title">Signature Project</div>
-      <h3 class="featured__name">Jarvis-like AI Assistant</h3>
-      <p class="featured__description">
-        A personal AI assistant built with Python that integrates backend logic, LLMs, and automation.
-      </p>
-      <p class="featured__tech">Python · FastAPI · LLMs · Docker</p>
-      <a href="https://github.com/aragulkumar" class="featured__button" target="_blank">View on GitHub</a>
-    </div>
-  </section>
+<section class="section reveal" id="projects">
+  <h2 class="section__title">Featured Project</h2>
+  <div class="featured">
+    <div class="featured__title">Signature Project</div>
+    <h3 class="featured__name">Stock News Alert</h3>
+    <p class="featured__description">
+      An automated system that tracks daily stock price movements and sends
+      relevant news updates when significant changes occur.
+    </p>
+    <p class="featured__tech">
+      Python · APIs · requests · Email automation · dotenv
+    </p>
+    <a
+      href="https://github.com/aragulkumar/stock-news-alert"
+      class="featured__button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View on GitHub
+    </a>
+  </div>
+</section>
+
+
 
   <!-- ABOUT -->
-  <section class="section reveal">
+  <section class="section reveal" id="about">
     <h2 class="section__title">About</h2>
     <p class="about__text">I'm Ragul Kumar A, a Python and AI developer focused on backend systems, intelligent automation, and AI-powered tools. Currently, I'm building a Jarvis-like AI assistant using Python, FastAPI, and LLMs, learning by building and documenting real projects.
       </p>
   </section>
+
 
   <!-- LINKS -->
   <section class="section reveal">
@@ -76,12 +110,15 @@
       <a href="https://www.linkedin.com/in/aragulkumar" class="links__item">LinkedIn</a>
       <a href="https://instagram.com/aragulkumar" target="_blank" rel="noopener noreferrer" class="links__item">Instagram</a>
 
+
     </div>
   </section>
+
 
   <footer>
     <p>© Ragul Kumar A — Python & AI Developer</p>
   </footer>
+
 
   <!-- JS -->
   <script src="js/main.js"></script>
