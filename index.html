@@ -9,13 +9,15 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet"/>
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            mono: ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+            mono:    ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+            display: ['"Space Mono"', 'monospace'],
           },
           colors: {
             bg:      '#0f0f0f',
@@ -35,7 +37,6 @@
   <style>
     body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
     a { transition: color 0.15s ease; }
-    * { transition-property: color, opacity; transition-duration: 0.15s; transition-timing-function: ease; }
   </style>
 </head>
 
@@ -57,7 +58,7 @@
 
     <!-- ── Hero ─────────────────────────────────────── -->
     <section class="mb-14">
-      <h1 class="text-4xl font-medium text-bright mb-1">ragul kumar a</h1>
+      <h1 class="font-display text-4xl font-bold text-bright mb-1">Ragul Kumar A</h1>
       <p class="text-base text-muted mb-0.5">chennai, india</p>
       <p class="text-base text-muted mb-5">anna university — cse undergrad</p>
       <p class="text-lg text-base leading-relaxed max-w-[70ch]">
