@@ -1,126 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[#0f0f0f]">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-  <title>Ragul Kumar A | Python & AI Developer</title>
-  <meta name="description" content="Ragul Kumar A is a Python & AI developer building backend systems, AI-powered assistants, and intelligent automation." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ragul Kumar A</title>
+  <meta name="description" content="Ragul Kumar A — Python & AI developer building backend systems, AI-powered assistants, and intelligent automation." />
   <link rel="canonical" href="https://aragulkumar.github.io/" />
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Geist Mono font -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+          },
+          colors: {
+            bg:      '#0f0f0f',
+            surface: '#161616',
+            border:  '#1f1f1f',
+            dim:     '#555',
+            muted:   '#888',
+            base:    '#c8c8c8',
+            bright:  '#e8e8e8',
+          },
+        },
+      },
+    }
+  </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
+    a { transition: color 0.15s ease; }
+  </style>
 </head>
 
+<body class="bg-bg text-base min-h-screen px-6 py-12 pb-24">
+  <main class="max-w-[660px] mx-auto">
 
-<body>
-
-  <header class="nav">
-  <div class="nav__inner">
-    <nav class="nav__links">
-      <a href="index.html#home" class="nav__link">Home</a>
-      <a href="projects.html" class="nav__link">Projects</a>
-      <a href="index.html#about" class="nav__link">About</a>
+    <!-- ── Navigation ───────────────────────────────── -->
+    <nav class="flex gap-5 mb-14 text-xs text-dim">
+      <a href="/" class="hover:text-bright">
+        <span class="text-muted">[h]</span> home
+      </a>
+      <a href="/projects.html" class="hover:text-bright">
+        <span class="text-muted">[p]</span> projects
+      </a>
     </nav>
-  </div>
-</header>
 
-
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <h1 class="hero__name">Ragul Kumar A</h1>
-    <p class="hero__subtitle">Python & AI Developer</p>
-    <p class="hero__description">
-      I design and build backend systems, AI-powered assistants, and automation tools with a focus on clarity, scalability, and real-world use.
-    </p>
-
-
-    <div class="terminal">
-      <div class="terminal__line"><span class="terminal__prompt">$</span> whoami</div>
-      <div class="terminal__line">Ragul Kumar A — Python & AI Developer</div>
-      <div class="terminal__line"><span class="terminal__prompt">$</span> focus --current</div>
-      <div class="terminal__line">Building backend systems & AI automation</div>
-    </div>
-
-
-    <a href="projects.html" class="hero__cta">View Projects</a>
-
-  </section>
-
-
-  <!-- WHAT I DO -->
-  <section class="section reveal">
-    <h2 class="section__title">What I Do</h2>
-    <ul class="what-i-do__list">
-      <li class="what-i-do__item">Python backend development and APIs</li>
-      <li class="what-i-do__item">AI systems using large language models (LLMs)</li>
-      <li class="what-i-do__item">Intelligent automation and agent-like systems</li>
-      <li class="what-i-do__item">Scalable software architecture design</li>
-    </ul>
-  </section>
-
-
-  <!-- FEATURED PROJECT -->
-<section class="section reveal" id="projects">
-  <h2 class="section__title">Featured Project</h2>
-  <div class="featured">
-    <div class="featured__title">Signature Project</div>
-    <h3 class="featured__name">Stock News Alert</h3>
-    <p class="featured__description">
-      An automated system that tracks daily stock price movements and sends
-      relevant news updates when significant changes occur.
-    </p>
-    <p class="featured__tech">
-      Python · APIs · requests · Email automation · dotenv
-    </p>
-    <a
-      href="https://github.com/aragulkumar/stock-news-alert"
-      class="featured__button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View on GitHub
-    </a>
-  </div>
-</section>
-
-
-
-  <!-- ABOUT -->
-  <section class="section reveal" id="about">
-    <h2 class="section__title">About</h2>
-    <p class="about__text">I'm Ragul Kumar A, a Python and AI developer focused on backend systems, intelligent automation, and AI-powered tools. Currently, I'm building a Jarvis-like AI assistant using Python, FastAPI, and LLMs, learning by building and documenting real projects.
-      </p>
-  </section>
-
-
-  <!-- LINKS -->
-  <section class="section reveal">
-    <h2 class="section__title">Links</h2>
-    <div class="links">
-      <a href="https://github.com/aragulkumar" class="links__item">GitHub</a>
-      <a href="https://www.linkedin.com/in/aragulkumar" class="links__item">LinkedIn</a>
-      <a href="https://instagram.com/aragulkumar" target="_blank" rel="noopener noreferrer" class="links__item">Instagram</a>
-
-
-    </div>
-  </section>
-
-
-  <footer>
-    <p>© Ragul Kumar A — Python & AI Developer</p>
-  </footer>
-
-
-  <!-- JS -->
-  <script src="js/main.js"></script>
+  </main>
 </body>
 </html>
