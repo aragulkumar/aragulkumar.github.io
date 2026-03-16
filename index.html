@@ -7,10 +7,7 @@
   <meta name="description" content="Ragul Kumar A — Python & AI developer building backend systems, AI-powered assistants, and intelligent automation." />
   <link rel="canonical" href="https://aragulkumar.github.io/" />
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Geist Mono font -->
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 
   <script>
@@ -26,8 +23,9 @@
             border:  '#1f1f1f',
             dim:     '#555',
             muted:   '#888',
-            base:    '#c8c8c8',
-            bright:  '#e8e8e8',
+            base:    '#dcdcdc',
+            bright:  '#f0f0f0',
+            accent:  '#e8622a',
           },
         },
       },
@@ -37,21 +35,110 @@
   <style>
     body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
     a { transition: color 0.15s ease; }
+    * { transition-property: color, opacity; transition-duration: 0.15s; transition-timing-function: ease; }
   </style>
 </head>
 
 <body class="bg-bg text-base min-h-screen px-6 py-12 pb-24">
-  <main class="max-w-[660px] mx-auto">
+  <main class="max-w-[900px] mx-auto">
 
     <!-- ── Navigation ───────────────────────────────── -->
-    <nav class="flex gap-5 mb-14 text-xs text-dim">
+    <nav class="flex gap-5 mb-14 text-base text-dim">
       <a href="/" class="hover:text-bright">
         <span class="text-muted">[h]</span> home
+      </a>
+      <a href="/blog/" class="hover:text-bright">
+        <span class="text-muted">[b]</span> blog
       </a>
       <a href="/projects.html" class="hover:text-bright">
         <span class="text-muted">[p]</span> projects
       </a>
     </nav>
+
+    <!-- ── Hero ─────────────────────────────────────── -->
+    <section class="mb-14">
+      <h1 class="text-4xl font-medium text-bright mb-1">ragul kumar a</h1>
+      <p class="text-base text-muted mb-0.5">chennai, india</p>
+      <p class="text-base text-muted mb-5">anna university — cse undergrad</p>
+      <p class="text-lg text-base leading-relaxed max-w-[70ch]">
+        i'm a cs undergrad who loves building things that actually work.
+        i spend most of my time writing python, poking at llms, and designing
+        backend systems. when i'm not coding, i'm probably tinkering with
+        side projects or obsessing over clean system design.
+      </p>
+    </section>
+
+    <!-- ── Blog ─────────────────────────────────────── -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-medium text-bright border-b border-border pb-2 mb-5">
+        blog
+      </h2>
+
+      <ul class="space-y-0">
+        <li class="group flex justify-between items-baseline py-3 border-b border-border cursor-pointer">
+          <a href="/blog/building-stock-alert.html"
+             class="text-lg text-base group-hover:text-bright no-underline">
+            building a stock alert system with python
+          </a>
+          <span class="text-sm text-dim whitespace-nowrap ml-6 group-hover:text-muted">mar 10, 2026</span>
+        </li>
+        <li class="group flex justify-between items-baseline py-3 border-b border-border cursor-pointer">
+          <a href="/blog/why-backend.html"
+             class="text-lg text-base group-hover:text-bright no-underline">
+            why i love backend systems over frontend
+          </a>
+          <span class="text-sm text-dim whitespace-nowrap ml-6 group-hover:text-muted">feb 14, 2026</span>
+        </li>
+      </ul>
+
+      <a href="/blog/" class="inline-block mt-4 text-base text-dim hover:text-bright no-underline">
+        all posts →
+      </a>
+    </section>
+
+    <!-- ── Projects ──────────────────────────────────── -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-medium text-bright border-b border-border pb-2 mb-5">
+        projects
+      </h2>
+
+      <div class="group block pb-5 mb-5 border-b border-border cursor-pointer">
+        <a href="https://github.com/aragulkumar/stock-news-alert" target="_blank" rel="noopener"
+           class="block no-underline">
+          <h3 class="text-xl font-medium text-accent group-hover:opacity-80 mb-0.5 lowercase">stock news alert</h3>
+          <p class="text-base text-dim mb-1">creator and python developer (dec 2025 – present)</p>
+          <p class="text-lg text-base group-hover:text-bright">automated system that tracks daily stock movements and sends relevant news via email when significant changes occur.</p>
+        </a>
+      </div>
+
+      <div class="group block pb-5 mb-5 border-b border-border cursor-pointer">
+        <a href="https://github.com/aragulkumar/jarvis-core" target="_blank" rel="noopener"
+           class="block no-underline">
+          <h3 class="text-xl font-medium text-accent group-hover:opacity-80 mb-0.5 lowercase">jarvis core</h3>
+          <p class="text-base text-dim mb-1">creator (jan 2026 – present)</p>
+          <p class="text-lg text-base group-hover:text-bright">modular personal ai assistant system with skill-based architecture, voice control, and plugin-driven extensibility.</p>
+        </a>
+      </div>
+
+      <a href="/projects.html" class="inline-block mt-1 text-base text-dim hover:text-bright no-underline">
+        all projects →
+      </a>
+    </section>
+
+    <!-- ── Links / Social ────────────────────────────── -->
+    <section>
+      <h2 class="text-2xl font-medium text-bright border-b border-border pb-2 mb-5">
+        links
+      </h2>
+      <div class="flex flex-wrap gap-x-6 gap-y-3">
+        <a href="mailto:aragulkumar@gmail.com"
+           class="text-lg text-dim hover:text-bright no-underline">email</a>
+        <a href="https://github.com/aragulkumar" target="_blank" rel="noopener"
+           class="text-lg text-dim hover:text-bright no-underline">github</a>
+        <a href="https://linkedin.com/in/aragulkumar" target="_blank" rel="noopener"
+           class="text-lg text-dim hover:text-bright no-underline">linkedin</a>
+      </div>
+    </section>
 
   </main>
 </body>

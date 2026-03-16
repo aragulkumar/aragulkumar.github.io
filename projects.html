@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[#0f0f0f]">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,97 +7,146 @@
   <meta name="description" content="Projects by Ragul Kumar A — backend systems, AI assistants, and automation tools." />
   <link rel="canonical" href="https://aragulkumar.github.io/projects.html" />
 
-  <!-- CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+          },
+          colors: {
+            bg:      '#0f0f0f',
+            surface: '#161616',
+            border:  '#1f1f1f',
+            dim:     '#555',
+            muted:   '#888',
+            base:    '#dcdcdc',
+            bright:  '#f0f0f0',
+            accent:  '#e8622a',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
+    a { transition: color 0.15s ease; }
+  </style>
 </head>
-<body class="projects-page">
 
-  <!-- Top nav reused -->
-  <header class="nav">
-    <div class="nav__inner">
-        <nav class="nav__links">
-        <a href="index.html#home" class="nav__link">Home</a>
-        <a href="projects.html" class="nav__link">Projects</a>
-        <a href="index.html#about" class="nav__link">About</a>
-        </nav>
-    </div>
-    </header>
+<body class="bg-bg text-base min-h-screen px-6 py-12 pb-24">
+  <main class="max-w-[900px] mx-auto">
 
+    <!-- ── Navigation ───────────────────────────────── -->
+    <nav class="flex gap-5 mb-14 text-base text-dim">
+      <a href="/" class="hover:text-bright">
+        <span class="text-muted">[h]</span> home
+      </a>
+      <a href="/blog/" class="hover:text-bright">
+        <span class="text-muted">[b]</span> blog
+      </a>
+      <a href="/projects.html" class="hover:text-bright">
+        <span class="text-muted">[p]</span> projects
+      </a>
+    </nav>
 
-  <main class="projects">
-    <section class="projects__header">
-      <p class="projects__kbd">[p] projects</p>
-      <h1 class="projects__title">projects</h1>
-      <p class="projects__intro">
-        Here are some of the projects I've been building. The focus is on
-        practical backend systems, AI assistants, and automation tools that solve real problems.
+    <!-- ── Page Header ───────────────────────────────── -->
+    <section class="mb-10">
+      <h1 class="text-4xl font-medium text-bright mb-2">projects</h1>
+      <p class="text-lg text-muted leading-relaxed max-w-[70ch]">
+        things i've built — focused on backend systems, ai assistants, and automation tools that solve real problems.
       </p>
     </section>
 
-    <section class="projects__list">
+    <!-- ── Projects List ─────────────────────────────── -->
+    <section class="space-y-6">
 
-            <!-- PROJECT 1 -->
-      <article class="project-card">
-        <header class="project-card__header">
-          <h2 class="project-card__title">Stock News Alert</h2>
-          <a
-            href="https://github.com/aragulkumar/stock-news-alert"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card__external"
-          >
-            ↗
+      <!-- PROJECT: Stock News Alert -->
+      <div class="bg-surface border border-border rounded-lg p-6">
+        <div class="flex items-start justify-between mb-1">
+          <a href="https://github.com/aragulkumar/stock-news-alert" target="_blank" rel="noopener"
+             class="text-2xl font-medium text-accent hover:opacity-80 no-underline lowercase">
+            stock news alert
           </a>
-        </header>
+          <a href="https://github.com/aragulkumar/stock-news-alert" target="_blank" rel="noopener"
+             class="text-lg text-dim hover:text-bright no-underline ml-4 mt-1">↗</a>
+        </div>
 
-        <p class="project-card__meta">
-          Creator and Python Developer <span class="project-card__dot">•</span>
-          (Dec 2025 – present)
+        <p class="text-base text-muted mb-3">creator and python developer · dec 2025 – present</p>
+
+        <p class="text-lg text-base mb-5">
+          automated system that tracks daily stock price movements and sends relevant news updates via email when significant changes occur.
         </p>
 
-        <p class="project-card__summary">
-          Automated system that tracks daily stock price movements and sends
-          relevant news updates via email when significant changes occur.
-        </p>
-
-        <div class="project-card__section">
-          <h3 class="project-card__label">achievements</h3>
-          <ul class="project-card__list">
+        <div class="mb-5">
+          <h3 class="text-base font-medium text-bright mb-2">achievements</h3>
+          <ul class="text-base text-muted space-y-1 list-disc list-inside">
             <li>built an automated pipeline to fetch and analyze daily stock data.</li>
             <li>implemented accurate percentage change calculation logic.</li>
-            <li>integrated stock and news APIs for real-world data handling.</li>
+            <li>integrated stock and news apis for real-world data handling.</li>
             <li>delivered clean, readable email alerts with relevant news context.</li>
             <li>secured credentials using environment variables and .gitignore.</li>
           </ul>
         </div>
 
-        <div class="project-card__section">
-          <h3 class="project-card__label">technologies</h3>
-          <div class="project-card__tags">
-            <span class="tag">python</span>
-            <span class="tag">apis</span>
-            <span class="tag">requests</span>
-            <span class="tag">email automation</span>
-            <span class="tag">linux</span>
-            <span class="tag">dotenv</span>
+        <div>
+          <h3 class="text-base font-medium text-bright mb-2">technologies</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">python</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">apis</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">requests</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">email automation</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">linux</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">dotenv</span>
           </div>
         </div>
-      </article>
+      </div>
 
+      <!-- PROJECT: Jarvis Core -->
+      <div class="bg-surface border border-border rounded-lg p-6">
+        <div class="flex items-start justify-between mb-1">
+          <a href="https://github.com/aragulkumar/jarvis-core" target="_blank" rel="noopener"
+             class="text-2xl font-medium text-accent hover:opacity-80 no-underline lowercase">
+            jarvis core
+          </a>
+          <a href="https://github.com/aragulkumar/jarvis-core" target="_blank" rel="noopener"
+             class="text-lg text-dim hover:text-bright no-underline ml-4 mt-1">↗</a>
+        </div>
 
-      <!-- Add more <article class="project-card"> ... </article> here later -->
+        <p class="text-base text-muted mb-3">creator · jan 2026 – present</p>
+
+        <p class="text-lg text-base mb-5">
+          modular personal ai assistant with a skill-based plugin architecture, supporting voice control, intelligent task routing, and extensible module integration.
+        </p>
+
+        <div class="mb-5">
+          <h3 class="text-base font-medium text-bright mb-2">achievements</h3>
+          <ul class="text-base text-muted space-y-1 list-disc list-inside">
+            <li>designed a plugin-driven skill architecture for clean module separation.</li>
+            <li>integrated llm-based intent parsing for natural language commands.</li>
+            <li>built voice-to-text and text-to-speech pipelines for hands-free use.</li>
+            <li>implemented secure configuration and logging system across all modules.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-medium text-bright mb-2">technologies</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">python</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">llms</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">openai api</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">voice io</span>
+            <span class="text-sm text-muted border border-border px-2.5 py-0.5 rounded">modular design</span>
+          </div>
+        </div>
+      </div>
 
     </section>
+
   </main>
-
-  <footer class="projects__footer">
-    <p>© Ragul Kumar A — Python & AI Developer</p>
-  </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

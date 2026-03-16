@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0f0f0f]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I Love Backend Systems Over Frontend — Ragul Kumar A</title>
+  <meta name="description" content="My honest take on why backend work feels more rewarding to me as a developer." />
+  <link rel="canonical" href="https://aragulkumar.github.io/blog/why-backend.html" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Geist Mono font -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+          },
+          colors: {
+            bg:      '#0f0f0f',
+            surface: '#161616',
+            border:  '#1f1f1f',
+            dim:     '#555',
+            muted:   '#888',
+            base:    '#dcdcdc',
+            bright:  '#f0f0f0',
+            accent:  '#e8622a',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
+    a { transition: color 0.15s ease; }
+  </style>
+</head>
+
+<body class="bg-bg text-base min-h-screen px-6 py-12 pb-24">
+  <main class="max-w-[900px] mx-auto">
+
+    <!-- ── Navigation ───────────────────────────────── -->
+    <nav class="flex gap-5 mb-14 text-base text-dim">
+      <a href="/" class="hover:text-bright">
+        <span class="text-muted">[h]</span> home
+      </a>
+      <a href="/blog/" class="hover:text-bright">
+        <span class="text-muted">[b]</span> blog
+      </a>
+      <a href="/projects.html" class="hover:text-bright">
+        <span class="text-muted">[p]</span> projects
+      </a>
+    </nav>
+
+    <!-- ── Article ───────────────────────────────────── -->
+    <article>
+      <h1 class="text-3xl font-medium text-bright mb-1 lowercase">
+        why i love backend systems over frontend
+      </h1>
+      <p class="text-base text-dim mb-1">feb 14, 2026</p>
+      <p class="text-base text-dim mb-8">430 words · 3 minute read</p>
+
+      <div class="text-base text-base leading-relaxed space-y-4">
+        <p>
+          this isn't a hot take — frontend is hard and i respect people who do it well.
+          but every time i sit down to build something, i gravitate toward the backend.
+          here's why.
+        </p>
+
+        <p>
+          backend work is mostly about logic and systems. data flows in, gets processed,
+          stored, or forwarded — and the correctness of that process is what you're
+          optimizing for. there's no ambiguity about whether it worked. either the right
+          data came out or it didn't.
+        </p>
+
+        <p>
+          frontend feels subjective to me in a way that makes me uncomfortable. "does this
+          look good?" depends on who's asking. "is this api returning the right response?"
+          does not. i like problems with clear answers.
+        </p>
+
+        <p>
+          i also love the infrastructure side of it — how systems scale, how databases are
+          structured, how you handle failures gracefully. these are hard, interesting
+          problems. i could think about system design all day.
+        </p>
+
+        <p>
+          none of this means i avoid the frontend entirely. building this site, for
+          instance, forced me to care about html structure and basic css — and i actually
+          enjoyed it. but if i had to pick one side to specialise in, it's the backend
+          every time.
+        </p>
+      </div>
+    </article>
+
+  </main>
+</body>
+</html>

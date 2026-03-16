@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0f0f0f]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Stock Alert System with Python — Ragul Kumar A</title>
+  <meta name="description" content="How I automated stock tracking and email notifications end-to-end using Python, APIs, and environment variables." />
+  <link rel="canonical" href="https://aragulkumar.github.io/blog/building-stock-alert.html" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Geist Mono font -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+          },
+          colors: {
+            bg:      '#0f0f0f',
+            surface: '#161616',
+            border:  '#1f1f1f',
+            dim:     '#555',
+            muted:   '#888',
+            base:    '#dcdcdc',
+            bright:  '#f0f0f0',
+            accent:  '#e8622a',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
+    a { transition: color 0.15s ease; }
+  </style>
+</head>
+
+<body class="bg-bg text-base min-h-screen px-6 py-12 pb-24">
+  <main class="max-w-[900px] mx-auto">
+
+    <!-- ── Navigation ───────────────────────────────── -->
+    <nav class="flex gap-5 mb-14 text-base text-dim">
+      <a href="/" class="hover:text-bright">
+        <span class="text-muted">[h]</span> home
+      </a>
+      <a href="/blog/" class="hover:text-bright">
+        <span class="text-muted">[b]</span> blog
+      </a>
+      <a href="/projects.html" class="hover:text-bright">
+        <span class="text-muted">[p]</span> projects
+      </a>
+    </nav>
+
+    <!-- ── Article ───────────────────────────────────── -->
+    <article>
+      <h1 class="text-3xl font-medium text-bright mb-1 lowercase">
+        building a stock alert system with python
+      </h1>
+      <p class="text-base text-dim mb-1">mar 10, 2026</p>
+      <p class="text-base text-dim mb-8">620 words · 4 minute read</p>
+
+      <div class="text-base text-base leading-relaxed space-y-4">
+        <p>
+          i've always wanted a low-effort way to stay on top of stock movements without
+          constantly refreshing a finance app. so i built one. the system fetches daily
+          stock data, checks for significant price changes, and fires off an email with
+          relevant news — all automatically.
+        </p>
+
+        <p>
+          the core idea is simple: hit a stock price api, calculate the percentage change
+          from yesterday's close, and if it crosses a threshold (i use ±3%), pull headlines
+          from a news api and bundle it into an html email.
+        </p>
+
+        <p>
+          the stack is minimal on purpose. <span class="text-bright">requests</span> for
+          api calls, <span class="text-bright">smtplib</span> for email dispatch, and
+          <span class="text-bright">python-dotenv</span> to keep credentials out of the
+          codebase. that's it. no frameworks, no databases — just a python script and a
+          cron job.
+        </p>
+
+        <p>
+          one thing that tripped me up early was rate limits on the news api. i was hitting
+          it for every stock in one go, which got me blocked on the free tier. the fix was
+          a small delay between requests and caching yesterday's results in a json file so
+          i don't re-fetch data i already have.
+        </p>
+
+        <p>
+          securing credentials felt obvious but a lot of beginner projects skip it. i use
+          a <span class="text-bright">.env</span> file with dotenv and a
+          <span class="text-bright">.gitignore</span> that explicitly excludes it. every
+          api key, smtp password, and email address lives there — nothing hardcoded.
+        </p>
+
+        <p>
+          the email output is clean html with a simple table — stock symbol, current price,
+          percentage change, and three news headlines with links. readable in any client,
+          no styling headaches.
+        </p>
+
+        <p>
+          i run this as a cron job on a linux machine every weekday at 9am before the
+          market opens. took longer to figure out the crontab syntax than to write the
+          actual script. the project is open-source — check it out on
+          <a href="https://github.com/aragulkumar/stock-news-alert" target="_blank" rel="noopener"
+             class="text-bright hover:opacity-60">github</a>
+          if you want to set it up yourself.
+        </p>
+      </div>
+    </article>
+
+  </main>
+</body>
+</html>

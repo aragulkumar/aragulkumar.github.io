@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0f0f0f]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Ragul Kumar A</title>
+  <meta name="description" content="Writings on Python, AI, backend systems, and software engineering by Ragul Kumar A." />
+  <link rel="canonical" href="https://aragulkumar.github.io/blog/" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Geist Mono"', '"Fira Code"', '"Courier New"', 'monospace'],
+          },
+          colors: {
+            bg:      '#0f0f0f',
+            surface: '#161616',
+            border:  '#1f1f1f',
+            dim:     '#555',
+            muted:   '#888',
+            base:    '#dcdcdc',
+            bright:  '#f0f0f0',
+            accent:  '#e8622a',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Geist Mono', 'Fira Code', 'Courier New', monospace; }
+    a { transition: color 0.15s ease; }
+  </style>
+</head>
+
+<body class="bg-bg text-base min-h-screen px-6 py-12 pb-24">
+  <main class="max-w-[900px] mx-auto">
+
+    <!-- ── Navigation ───────────────────────────────── -->
+    <nav class="flex gap-5 mb-14 text-base text-dim">
+      <a href="/" class="hover:text-bright">
+        <span class="text-muted">[h]</span> home
+      </a>
+      <a href="/blog/" class="hover:text-bright">
+        <span class="text-muted">[b]</span> blog
+      </a>
+      <a href="/projects.html" class="hover:text-bright">
+        <span class="text-muted">[p]</span> projects
+      </a>
+    </nav>
+
+    <!-- ── Page Header ───────────────────────────────── -->
+    <section class="mb-10">
+      <h1 class="text-4xl font-medium text-bright mb-2">blog</h1>
+      <p class="text-lg text-muted leading-relaxed max-w-[70ch]">
+        a collection of my thoughts on python, ai, backend systems, and software engineering.
+      </p>
+    </section>
+
+    <!-- ── Post List ─────────────────────────────────── -->
+    <section>
+
+      <!-- Post 1 -->
+      <a href="/blog/building-stock-alert.html"
+         class="block pb-6 mb-6 border-b border-border no-underline group">
+        <h2 class="text-xl font-medium text-bright group-hover:text-bright mb-1 lowercase">
+          building a stock alert system with python
+        </h2>
+        <p class="text-lg text-muted group-hover:text-base mb-2">
+          how i automated stock tracking and email notifications end-to-end.
+        </p>
+        <div class="flex gap-5 text-base text-dim group-hover:text-muted">
+          <span>620 words</span>
+          <span>4 minutes</span>
+          <span>mar 10, 2026</span>
+        </div>
+      </a>
+
+      <!-- Post 2 -->
+      <a href="/blog/why-backend.html"
+         class="block pb-6 mb-6 border-b border-border no-underline group">
+        <h2 class="text-xl font-medium text-bright group-hover:text-bright mb-1 lowercase">
+          why i love backend systems over frontend
+        </h2>
+        <p class="text-lg text-muted group-hover:text-base mb-2">
+          my honest take on why backend work feels more rewarding to me as a developer.
+        </p>
+        <div class="flex gap-5 text-base text-dim group-hover:text-muted">
+          <span>430 words</span>
+          <span>3 minutes</span>
+          <span>feb 14, 2026</span>
+        </div>
+      </a>
+
+    </section>
+
+  </main>
+</body>
+</html>
